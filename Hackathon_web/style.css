@@ -103,47 +103,11 @@ section {
     display: none;
 }
 
-.header .search-form {
-    position: absolute;
-    top: 115%; right: 7%;
-    background: #fff;
-    width: 50rem;
-    height: 5rem;
-    display: flex;
-    align-items: center;
-    transform: scaleY(0);
-    transform-origin: top;
-}
-
-.header .search-form.active {
-    transform: scaleY(1);
-}
-
-.header .search-form input {
-    height: 100%;
-    width: 100%;
-    font-size: 1.6rem;
-    color: var(--black);
-    padding: 1rem;
-    text-transform: none;
-}
-
-.header .search-form label {
-    cursor: pointer;
-    font-size: 2.2rem;
-    margin-right: 1.5rem;
-    color: var(--black);
-}
-
-.header .search-form label:hover {
-    color: var(--main-color);
-}
-
 .home {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: url(../bg.jpg) no-repeat;
+    background: url(bg.jpg) no-repeat;
     background-size: cover;
     background-position: center;
 }
@@ -338,21 +302,7 @@ section {
     font-size: 1.5rem;
 }
 
-
-.knowmore .info-box.duration {
-    background: #333;
-    padding: 2rem;
-    border-radius: .5rem;
-    text-align: center;
-    transition: background 0.3s ease, transform 0.3s ease; 
-}
-
-.knowmore .info-box.duration:hover {
-    background: var(--main-color); 
-    transform: scale(1.05); 
-}
-
-.contact .row{
+.contact .row {
     display: flex;
     background: var(--black);
     flex-wrap: wrap;
