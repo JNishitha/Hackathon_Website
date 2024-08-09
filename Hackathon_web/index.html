@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,56 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="js/script.js"></script>
+    <style>
+        .countdown {
+            text-align: center;
+            font-size: 2rem;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            margin: 20px auto;
+            width: 60%;
+        }
+
+        .countdown div {
+            display: inline-block;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        .countdown div span {
+            display: block;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .register-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+        }
+
+        .drive-link {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .drive-link .btn {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+        }
+    </style>
 </head>
+
 <body>
     <header class="header">
         <a href="#" class="logo">
@@ -54,35 +104,22 @@
     </section>
 
     <section class="registration" id="registration">
-        <h1 class="heading"> <span>Register</span> Now </h1>
-        <p>Ready to take on the challenge? Fill out the registration form below to secure your spot in the Technova hackathon!</p>
-        
-        <form action="https://forms.gle/eTgf5gWPHAxU6FBfA" target="_blank" class="registration-form">
-            <div class="form-group">
-                <label for="name">Full Name:</label>
-                <input type="text" id="name" required>
+        <h1 class="heading"> <span>Countdown</span> to TechNova </h1>
+        <div class="countdown">
+            <div>
+                <span id="days">00</span> Days
             </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" required>
+            <div>
+                <span id="hours">00</span> Hours
             </div>
-            <div class="form-group">
-                <label for="team-name">Team Name:</label>
-                <input type="text" id="team-name" required>
+            <div>
+                <span id="minutes">00</span> Minutes
             </div>
-            <div class="form-group">
-                <label for="experience">Experience Level:</label>
-                <select id="experience" required>
-                    <option value="" disabled selected>Select your experience level</option>
-                    <option value="beginner">Beginner</option>
-                    <option value="intermediate">Intermediate</option>
-                    <option value="advanced">Advanced</option>
-                </select>
+            <div>
+                <span id="seconds">00</span> Seconds
             </div>
-            <div class="button-container">
-                <button type="submit" class="btn">Submit Registration</button>
-            </div>
-        </form>
+        </div>
+        <a href="https://forms.gle/eTgf5gWPHAxU6FBfA" class="register-link" target="_blank">Register Now</a>
     </section>
 
     <section class="knowmore" id="knowmore">
@@ -91,7 +128,7 @@
             <div class="info-box">
                 <i class="fas fa-calendar-alt"></i>
                 <h3>Event Date</h3>
-                <p>August 19-20, 2024</p>
+                <p>August 29-30, 2024</p>
             </div>
             <div class="info-box">
                 <i class="fas fa-map-marker-alt"></i>
@@ -101,7 +138,7 @@
             <div class="info-box">
                 <i class="fas fa-trophy"></i>
                 <h3>Prizes</h3>
-                <p>Internship at renowned Startups</p>
+                <p>Internship at renowned Startups & Goodies!</p>
             </div>
             <div class="info-box">
                 <i class="fas fa-network-wired"></i>
@@ -142,7 +179,7 @@
                 <input type="button" value="Contact Now" class="btn" id="contactBtn">
             </form>
         </div>
-    </section>    
+    </section>
 
     <section class="footer">
         <div class="share">
@@ -160,16 +197,35 @@
     </section>
 
     <script>
-        document.getElementById('contactBtn').addEventListener('click', function() {
-            const name = document.querySelector('input[placeholder="name"]').value;
-            const email = document.querySelector('input[placeholder="email"]').value;
-            const number = document.querySelector('input[placeholder="number"]').value;
+        
+        const eventDate = new Date("August 29, 2024 00:00:00").getTime();
 
-            const mailtoLink = `mailto:aeroastro_vzg@gitam.in?subject=Contact%20from%20${encodeURIComponent(name)}&body=Name:%20${encodeURIComponent(name)}%0AEmail:%20${encodeURIComponent(email)}%0ANumber:%20${encodeURIComponent(number)}`;
+        const countdownFunction = setInterval(function() {
+            const now = new Date().getTime();
+            const timeLeft = eventDate - now;
 
-            window.location.href = mailtoLink;
-        });
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML = days;
+            document.getElementById("hours").innerHTML = hours;
+            document.getElementById("minutes").innerHTML = minutes;
+            document.getElementById("seconds").innerHTML = seconds;
+
+            if (timeLeft < 0) {
+                clearInterval(countdownFunction);
+                document.querySelector(".countdown").innerHTML = "The event has started!";
+            }
+        }, 1000);
+
     </script>
-
 </body>
 </html>
+
+
+
+
+
+        

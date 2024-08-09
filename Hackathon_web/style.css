@@ -148,9 +148,9 @@ section {
     display: inline-block;
     background: var(--main-color);
     color: #fff;
-    padding: 1rem 2rem;
+    padding: 1.2rem 2.5rem; 
     border-radius: 5rem;
-    font-size: 1.6rem;
+    font-size: 1.8rem; 
     text-align: center;
     transition: background 0.3s ease;
     border: none;
@@ -196,7 +196,7 @@ section {
 
 .registration {
     background: var(--bg);
-    color: #fff;
+    color: #090909;
     text-align: center;
     padding: 5rem 7%;
     border-radius: 1rem;
@@ -309,25 +309,25 @@ section {
     gap: 1rem;
 }
 
-.contact .row .map{
+.contact .row .map {
     flex: 1 1 45rem;
     width: 100%;
     object-fit: cover;
 }
 
-.contact .row form{
+.contact .row form {
     flex: 1 1 45rem;
     padding: 5rem 2rem;
     text-align: center;
 }
 
-.contact .row form h3{
+.contact .row form h3 {
     text-transform: uppercase;
     font-size: 3.5rem;
     color: #fff;
 }
 
-.contact .row form .inputBox{
+.contact .row form .inputBox {
     display: flex;
     align-items: center;
     margin-top: 2rem;
@@ -336,13 +336,13 @@ section {
     border: var(--border);
 }
 
-.contact .row form .inputBox span{
+.contact .row form .inputBox span {
     color: #fff;
     font-size: 2rem;
     padding-left: 2rem;
 }
 
-.contact .row form .inputBox input{
+.contact .row form .inputBox input {
     width: 100%;
     padding: 2rem;
     font-size: 1.7rem;
@@ -351,16 +351,16 @@ section {
     background: none;
 }
 
-.footer{
+.footer {
     background: var(--black);
     text-align: center;
 }
 
-.footer .share{
+.footer .share {
     padding: 1rem 0;    
 }
 
-.footer .share a{
+.footer .share a {
     height: 5rem;
     width: 5rem;
     line-height: 5rem;
@@ -371,11 +371,11 @@ section {
     border-radius: 50%;
 }
 
-.footer .share a:hover{
+.footer .share a:hover {
     background-color: var(--main-color);
 }
 
-.footer .links{
+.footer .links {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -383,97 +383,50 @@ section {
     gap: 1rem;
 }
 
-.footer .links a{
-    padding: 7rem 2rem;
+.footer .links a {
+    font-size: 1.5rem;
     color: #fff;
-    border: var(--border);
+    border-bottom: var(--border);
+    padding-bottom: .5rem;
+    margin: 0 1.5rem;
+}
+
+.footer .links a:hover {
+    color: var(--main-color);
+    border-bottom-color: var(--main-color);
+}
+
+.footer .credit {
     font-size: 2rem;
+    color: #fff;
+    padding: 2rem 1rem;
+    margin: 1.5rem 0;
+    border-top: var(--border);
 }
 
-.footer .links a:hover{
-    background: var(--main-color);
+
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media (max-width: 991px) {
-    html {
-        font-size: 55%;
-    }
-
-    .header {
-        padding: 1.5rem 2rem;
-    }
-
-    section {
-        padding: 2rem 7%;
-    }
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
 }
 
-@media (max-width: 768px) {
-    #menu-btn {
-        display: inline-block;
-    }
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1.4rem;
+}
 
-    .header .navbar {
-        position: absolute;
-        top: 100%; right: -100%;
-        background: #fff;
-        width: 30rem;
-        height: calc(100vh - 9.5rem);
-    }
-
-    .header .navbar.active {
-        display: block;
-    }
-
-    .header .navbar a {
-        color: var(--black);
-        display: block;
-        margin: 1.5rem;
-        padding: 5rem;
-        font-size: 2rem;
-    }
-
-    .header .search-form {
-        width: 90%;
-        right: 2rem;
-    }
-
-    .home {
-        background-position: left;
-        justify-content: center;
-        text-align: center;
-    }
-
-    .home .content h6 {
-        font-size: 4.5rem;
-        margin-left: 0;
-    }
-
-    .home .content h3 {
-        font-size: 4rem;
-        margin-left: 0;
-    }
-
-    .home .content p {
-        font-size: 1.4rem;
-        margin-left: 0;
-    }
-
-    .knowmore .content {
-        flex-direction: column;
-    }
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border: 1px solid var(--main-color);
 }
