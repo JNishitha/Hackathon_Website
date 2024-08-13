@@ -73,7 +73,7 @@ section {
 }
 
 .header .logo img {
-    height: 6rem;
+    height: 8rem;
 }
 
 .header .navbar a {
@@ -121,7 +121,7 @@ section {
     text-transform: capitalize;
     color: #fff;
     margin-top: 10rem;
-    margin-left: -8rem;
+    margin-left: -7rem;
 }
 
 .home .content h3 {
