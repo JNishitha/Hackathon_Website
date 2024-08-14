@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackathon</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="js/script.js"></script>
+    <style>
+        .countdown {
+            text-align: center;
+            font-size: 2rem;
+            padding: 20px;
+            background: linear-gradient(45deg, #d3acdb, #cec3e9, #afa5d8, #d3acdb);
+            border-radius: 10px;
+            margin: 20px auto;  
+            width: 60%;
+        }   
+
+
+        .countdown div {
+            display: inline-block;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        .countdown div span {
+            display: block;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .register-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 2rem;
+        }
+
+        .register-link:hover {
+            transition-duration: 200ms;
+            background: #5a21af;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a href="#" class="logo">
+            <img src="logo.png" alt="">
+        </a>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#registration">Registration</a>
+            <a href="#knowmore">Know More</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="icons">
+            <div class="fas fa-bars" id="menu-btn"></div>
+        </div>
+    </header>
+
+    <section class="home" id="home">
+        <div class="content">
+            <h6>Code, Create, Conquer:</h6>
+            <h3>Welcome to TechNova</h3>
+            <p>Join Technova, our thrilling 24-hour hackathon, where tech enthusiasts, developers, and creative minds come together to innovate and push technology's boundaries. Whether you're an expert coder or a passionate beginner, Technova is your chance to bring ideas to life, network with industry experts, and compete for exciting prizes. Hack, innovate, and make an impact at Technova!</p>
+            <div class="button-container">
+                <a href="https://forms.gle/eTgf5gWPHAxU6FBfA" class="btn" target="_blank">Register Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <h1 class="heading"> <span>about</span> us </h1>
+        <div class="row">
+            <div class="image">
+                <img src="about.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>What We Stand For?</h3>
+                <p>At Technova, hosted by the Gitam Aero Astro Club, we are dedicated to fostering innovation and creativity in technology. Our mission is to unite aspiring developers, designers, and tech enthusiasts to collaborate, learn, and push the boundaries of possibility. As a community focused on promoting technology and its applications, particularly in aerospace, we provide a platform for participants to showcase their skills, connect with peers, and gain insights from industry experts. Our 24-hour hackathons challenge participants to creatively solve real-world problems while encouraging teamwork and skill development, making our events accessible to everyone—from seasoned coders to passionate beginners.</p>
+                <div class="button-container">
+                    <a href="#knowmore" class="btn">Know more</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="registration" id="registration">
+        <h1 class="heading"> <span>Countdown</span> to TechNova </h1>
+        <div class="countdown">
+            <div>
+                <span id="days">00</span> Days
+            </div>
+            <div>
+                <span id="hours">00</span> Hours
+            </div>
+            <div>
+                <span id="minutes">00</span> Minutes
+            </div>
+            <div>
+                <span id="seconds">00</span> Seconds
+            </div>
+        </div>
+        <a href="https://forms.gle/eTgf5gWPHAxU6FBfA" class="register-link" target="_blank">Register Now</a>
+    </section>
+
+    <section class="knowmore" id="knowmore">
+        <h1 class="heading"> <span>Know</span> More </h1>
+        <div class="content">
+            <div class="info-box">
+                <i class="fas fa-calendar-alt"></i>
+                <h3>Event Date</h3>
+                <p>August 29-30, 2024</p>
+            </div>
+            <div class="info-box">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Location</h3>
+                <p>VDC, Gitam University, Visakhapatnam</p>
+            </div>
+            <div class="info-box">
+                <i class="fas fa-trophy"></i>
+                <h3>Prizes</h3>
+                <p>Internship at renowned Startups & Goodies!</p>
+            </div>
+            <div class="info-box">
+                <i class="fas fa-network-wired"></i>
+                <h3>Networking</h3>
+                <p>Connect with industry experts and fellow tech enthusiasts</p>
+            </div>
+            <div class="info-box">
+                <i class="fas fa-lightbulb"></i>
+                <h3>Workshops</h3>
+                <p>Attend insightful workshops and tech talks</p>
+            </div>
+            <div class="info-box duration">
+                <i class="fas fa-clock"></i>
+                <h3>Hackathon Duration</h3>
+                <p>24 hours</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h1 class="heading"> <span>contact</span> us </h1>
+        <div class="row">
+            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7598.387233002033!2d83.3732238959962!3d17.78259533121811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a395be0d5b27a9f%3A0x34052378ff85c47e!2sVenture%20Development%20Centre!5e0!3m2!1sen!2sin!4v1722695930865!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <form id="contactForm">
+                <h3>get in touch</h3>
+                <div class="inputBox">
+                    <span class="fas fa-user"></span>
+                    <input type="text" placeholder="name" required>
+                </div>
+                <div class="inputBox">
+                    <span class="fas fa-envelope"></span>
+                    <input type="email" placeholder="email" required>
+                </div>
+                <div class="inputBox">
+                    <span class="fas fa-phone"></span>
+                    <input type="number" placeholder="number" required>
+                </div>
+                <input type="button" value="Contact Now" class="btn" id="contactBtn">
+            </form>
+        </div>
+    </section>
+
+    <section class="footer">
+        <div class="share">
+            <a href="https://www.instagram.com/gitam.aeroastro/?igsh=MWJscGNnbmlyaDdzMQ%3D%3D" class="fab fa-instagram" target="_blank"></a>
+            <a href="https://in.linkedin.com/company/gitam-aero-astro-club" class="fab fa-linkedin" target="_blank"></a>
+            <a href="mailto:aeroastro_vzg@gitam.in" class="fas fa-envelope"></a>
+        </div>
+        <div class="links">
+            <a href="#home">home</a>
+            <a href="#about">about</a>
+            <a href="#registration">registration</a>
+            <a href="#knowmore">know more</a>
+            <a href="#contact">contact</a>
+        </div>
+    </section>
+
+    <script>
+        
+        const eventDate = new Date("August 29, 2024 00:00:00").getTime();
+
+        const countdownFunction = setInterval(function() {
+            const now = new Date().getTime();
+            const timeLeft = eventDate - now;
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML = days;
+            document.getElementById("hours").innerHTML = hours;
+            document.getElementById("minutes").innerHTML = minutes;
+            document.getElementById("seconds").innerHTML = seconds;
+
+            if (timeLeft < 0) {
+                clearInterval(countdownFunction);
+                document.querySelector(".countdown").innerHTML = "The event has started!";
+            }
+        }, 1000);
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+        
