@@ -62,7 +62,7 @@ section {
     background: var(--bg);
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding: 1.5rem 7%;
     border-bottom: var(--border);
     position: fixed;
@@ -70,16 +70,28 @@ section {
     left: 0;
     right: 0;
     z-index: 1000;
+
+    @media only screen and (max-width:600px){
+        max-width: 100%;
+    }
 }
 
 .header .logo img {
     height: 8rem;
+    @media only screen and (max-width:600px){
+        height: 6rem;
+    }
 }
 
 .header .navbar a {
     margin: 0 1rem;
     font-size: 1.6rem;
     color: #fff;
+
+    @media only screen and (max-width:600px){
+        font-size: 1rem;;
+        
+    }
 }
 
 .header .navbar a:hover {
