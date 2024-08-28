@@ -342,6 +342,10 @@ section {
     color: #fff;
 }
 
+.contact .row {
+    color: var(--main-color)
+}
+
 .contact .row form .inputBox {
     display: flex;
     align-items: center;
