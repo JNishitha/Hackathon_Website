@@ -1,496 +1,349 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hackathon</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <script src="js/script.js"></script>
-    <style>
- .countdown {
-            text-align: center;
-            font-size: 2rem;
-            padding: 20px;
-            background: linear-gradient(45deg, #d3acdb, #cec3e9, #afa5d8, #d3acdb);
-            border-radius: 10px;
-            margin: 20px auto;
-            width: 60%;
-        }
+    <!--Header Section-->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hackathon</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="js/script.js"></script>
+        <!--Kept the styling of the components over in /stylesheet-->
+    </head>
 
-        .countdown div {
-            display: inline-block;
-            margin: 10px;
-            font-weight: bold;
-        }
+    <!--BodySection-->
+    <body>
+        <!--HeaderSection-->
+        <header class="header">
 
-        .countdown div span {
-            display: block;
-            font-size: 1.5rem;
-            color: #333;
-        }
+            <!--GAAC_Logo-->
+            <a href="#" class="logo">
+                <img src="./img/logo.png" alt="Logo">
+            </a>
 
-        .register-link {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 2rem;
-        }
-
-        .register-link:hover {
-            transition-duration: 200ms;
-            background: #5a21af;
-        }
-        .problem-statements-list {
-            padding: 50px 0;
-            background: linear-gradient(135deg,  #e9defa 0%, #e8e9c5 100%); 
-        }
-
-
-        .problem-statements-list .heading {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 4rem;
-            color: #333;
-            font-weight: bold;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-        }
-
-        .problem-statements-list .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            padding: 0 20px;
-        }
-
-        .problem-statements-list .problem-card {
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: calc(33.333% - 40px);
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            overflow: hidden; 
-            position: relative; 
-        }
-
-        .problem-statements-list .problem-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            color: #444;
-        }
-
-        .problem-statements-list .problem-card p {
-            font-size: 1.6rem;
-            color: #666;
-            margin-bottom: 20px;
-            text-align: left;
-        }
-
-        .problem-statements-list .problem-card ul{
-            font-size: 1.6rem;
-            color: #666;
-            margin-bottom: 20px;
-            text-align: left;
-            padding-left: 1rem;
-        }
-
-        .problem-statements-list .problem-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2));
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: 0;
-        }
-
-        .problem-statements-list .problem-card:hover::before {
-            opacity: 1;
-        }
-
-        .problem-statements-list .problem-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        .problem-statements-list .problem-card:hover h3 {
-            color: #4CAF50;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .problem-statements-list .problem-card {
-                width: calc(50% - 20px);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .problem-statements-list .problem-card {
-                width: 100%;
-            }
-        }      
-    </style>
-</head>
-
-<body>
-    <header class="header">
-        <a href="#" class="logo">
-            <img src="logo.png" alt="Logo">
-        </a>
-        <nav class="navbar">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#registration">Registration</a>
-            <a href="#knowmore">Know More</a>
-            <a href="#problem-statements">Problem Statements</a> 
-            <a href="#contact">Contact</a>
-        </nav>
-
-        <div class="icons">
-            <div class="fas fa-bars" id="menu-btn"></div>
-        </div>
-    </header>
-
-    <section class="home" id="home">
-        <div class="content">
-            <h6>Code, Create, Conquer:</h6>
-            <h3>Welcome to TechNova</h3>
-            <p>Join Technova, our thrilling 24-hour hackathon, where tech enthusiasts, developers, and creative minds come together to innovate and push technology's boundaries. Whether you're an expert coder or a passionate beginner, Technova is your chance to bring ideas to life, network with industry experts, and compete for exciting prizes. Hack, innovate, and make an impact at Technova!</p>
-            <div class="button-container">
-                <a href="https://forms.gle/eTgf5gWPHAxU6FBfA" class="btn" target="_blank">Register Now</a>
+            <!--NavBar-->
+            <nav class="navbar">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#registration">Registration</a>
+                <a href="#knowmore">Know More</a>
+                <a href="#problem-statements">Problem Statements</a>
+            </nav>
+            <div class="contact-btn">
+                <a class="btn" href="#contact">Contact Us</a>
             </div>
-        </div>
-    </section>
-
-    <section class="about" id="about">
-        <h1 class="heading"> <span>about</span> us </h1>
-        <div class="row">
-            <div class="image">
-                <img src="about.jpg" alt="About Us">
+            <div class="icons">
+                <div class="fas fa-bars" id="menu-btn"></div>
             </div>
+        </header>
+
+        <!--Hero/Header-->
+        <section class="home" id="home">
             <div class="content">
-                <h3>What We Stand For?</h3>
-                <p>At Technova, hosted by the Gitam Aero Astro Club, we are dedicated to fostering innovation and creativity in technology. Our mission is to unite aspiring developers, designers, and tech enthusiasts to collaborate, learn, and push the boundaries of possibility. As a community focused on promoting technology and its applications, particularly in aerospace, we provide a platform for participants to showcase their skills, connect with peers, and gain insights from industry experts. Our 24-hour hackathons challenge participants to creatively solve real-world problems while encouraging teamwork and skill development, making our events accessible to everyone—from seasoned coders to passionate beginners.</p>
+                <h6>Code, Create, Conquer:</h6>
+                <h3>Welcome to TechNova</h3>
+                <p>Join Technova, our thrilling 24-hour hackathon, where tech enthusiasts, developers, and creative minds come together to innovate and push technology's boundaries. Whether you're an expert coder or a passionate beginner, Technova is your chance to bring ideas to life, network with industry experts, and compete for exciting prizes. Hack, innovate, and make an impact at Technova!</p>
                 <div class="button-container">
-                    <a href="#knowmore" class="btn">Know more</a>
+                    <a href="https://forms.gle/eTgf5gWPHAxU6FBfA" class="btn" target="_blank">Register Now</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="registration" id="registration">
-        <h1 class="heading"> <span>Countdown</span> to TechNova </h1>
-        <div class="countdown">
-            <div>
-                <span id="days">00</span> Days
-            </div>
-            <div>
-                <span id="hours">00</span> Hours
-            </div>
-            <div>
-                <span id="minutes">00</span> Minutes
-            </div>
-            <div>
-                <span id="seconds">00</span> Seconds
-            </div>
-        </div>
-        <a href="https://forms.gle/eTgf5gWPHAxU6FBfA" class="register-link" target="_blank">Register Now</a>
-    </section>
-
-    <section class="knowmore" id="knowmore">
-        <h1 class="heading"> <span>Know</span> More </h1>
-        <div class="content">
-            <div class="info-box">
-                <i class="fas fa-calendar-alt"></i>
-                <h3>Event Date</h3>
-                <p>August 29-30, 2024</p>
-            </div>
-            <div class="info-box">
-                <i class="fas fa-map-marker-alt"></i>
-                <h3>Location</h3>
-                <p>Cotton Bhavan, Gitam University, Visakhapatnam</p>
-            </div>
-            <div class="info-box">
-                <i class="fas fa-trophy"></i>
-                <h3>Prizes</h3>
-                <p>Internship at renowned Startups & Goodies!</p>
-            </div>
-            <div class="info-box">
-                <i class="fas fa-network-wired"></i>
-                <h3>Networking</h3>
-                <p>Connect with industry experts and fellow tech enthusiasts</p>
-            </div>
-            <div class="info-box">
-                <i class="fas fa-lightbulb"></i>
-                <h3>Workshops</h3>
-                <p>Attend insightful workshops and tech talks</p>
-            </div>
-            <div class="info-box duration">
-                <i class="fas fa-clock"></i>
-                <h3>Hackathon Duration</h3>
-                <p>24 hours</p>
-            </div>
-        </div>
-    </section>
-
-<<<<<<< HEAD
-
-    <section class="problem-statements-list" id="problem-statements">
-        <h1 class="heading"> <span>Problem</span> Statements </h1>
-        <div class="container">
-            <div class="problem-card">
-                <h3>Problem Statement 1</h3>
-                <p>
-                    <strong>Problem Statement: Virtual Herbal Garden</strong>
-                </p>
-                
-                <p>
-                    <strong>Background:</strong><br>
-                    The AYUSH sector relies on medicinal plants and herbs, essential to traditional healing practices. However, access to physical herbal gardens is limited. A Virtual Herbal Garden will bridge this gap by offering a digital platform where users can explore and learn about various medicinal plants from the comfort of their homes.
-                </p>
-                
-                <p>
-                    <strong>Description:</strong><br>
-                    Participants are tasked with developing a Virtual Herbal Garden that is engaging, informative, and user-friendly. The platform should include:
-                </p>
-                
-                <ul>
-                    <li><strong>Interactive 3D Models:</strong> Realistic 3D models of medicinal plants, allowing users to rotate, zoom, and explore from different angles.</li>
-                    <li><strong>Detailed Information:</strong> Comprehensive details for each plant, including botanical name, common names, habitat, medicinal uses, and cultivation methods.</li>
-                    <li><strong>Multimedia Integration:</strong> High-quality images, videos, and audio descriptions to enhance the learning experience.</li>
-                    <li><strong>Search and Filter Options:</strong> Advanced search functionality to easily locate specific plants and filter them based on criteria like medicinal uses, region, and type.</li>
-                    <li><strong>Virtual Tours:</strong> Guided virtual tours focusing on specific themes, such as plants for digestive health, immunity, and skincare.</li>
-                    <li><strong>User Interaction:</strong> Features allowing users to bookmark favorite plants, take notes, and share information on social media.</li>
-                </ul>
-                
-                <p>
-                    <strong>Expected Outcome:</strong><br>
-                    A comprehensive Virtual Herbal Garden that serves as a valuable educational tool for students, practitioners, and enthusiasts of the AYUSH sector. The platform should be visually appealing, informative, and interactive, making the knowledge of medicinal plants accessible to a wider audience and promoting awareness of traditional herbal practices.
-                </p>
-            </div>
-            <div class="problem-card">
-                <h3>Problem Statement 2</h3>
-                <p>
-                    <strong>Problem Statement: Alumni Association Platform</strong>
-                </p>
-                
-                <p>
-                    <strong>Background:</strong><br>
-                    Alumni associations play a crucial role in maintaining lifelong connections between graduates and their alma mater. However, many face challenges in engagement, donations, and providing services like job networking. The aim is to create a comprehensive Alumni Association platform that addresses these challenges through both web and mobile applications.
-                </p>
-                
-                <p>
-                    <strong>Description:</strong><br>
-                    Participants are tasked with developing an Alumni Association platform for a University/Institute, accessible through web and mobile apps. The platform should include:
-                </p>
-                
-                <ul>
-                    <li><strong>Alumni Registration:</strong> Simple registration processes allowing alumni to join, update profiles, and stay connected.</li>
-                    <li><strong>Donation Portal:</strong> Secure mechanisms for easy donations to support college initiatives.</li>
-                    <li><strong>Networking Hub:</strong> Sections to connect alumni based on interests, professions, and locations.</li>
-                    <li><strong>Job Portal:</strong> Integrated job search and posting features for career opportunities and connections.</li>
-                    <li><strong>Alumni Directory:</strong> Searchable directory based on graduation year, field of study, industry, etc.</li>
-                    <li><strong>Success Story Tracking:</strong> Features to showcase and track alumni achievements and contributions.</li>
-                    <li><strong>Events and Reunions:</strong> Tools for organizing and managing alumni events and workshops.</li>
-                    <li><strong>Feedback and Surveys:</strong> Channels for alumni feedback and participation in surveys.</li>
-                </ul>
-                
-                <p>
-                    <strong>Expected Solution:</strong><br>
-                    The platform is expected to enhance alumni engagement, increase philanthropic support, support career advancement, foster knowledge sharing, and build a strong community. It should be user-friendly, secure, and scalable, catering to the diverse needs of the alumni community.
-                </p>
-                
-            </div>
-            <div class="problem-card">
-                <h3>Problem Statement 3</h3>
-                <p>
-                    <strong>Problem Statement: NutriPlan</strong>
-                </p>
-                
-                <p>
-                    With an overwhelming amount of conflicting nutritional advice available, individuals often find it challenging to maintain a balanced diet that aligns with their personal health goals. This confusion can lead to inconsistent dietary habits and unmet health objectives.
-                </p>
-                
-                <p>
-                    <strong>Challenge:</strong><br>
-                    Create a web application that analyzes users’ dietary habits, health goals, and preferences to generate personalized meal plans. The platform should offer clear and actionable nutritional advice, suggest recipes, and adapt recommendations based on user feedback and progress. This solution aims to simplify the path to healthier eating.
-                </p>
-                
-            </div>
-            <div class="problem-card">
-                <h3>Problem Statement 4</h3>
-                <p>
-                    <strong>Problem Statement: TrafficFlow</strong>
-                </p>
-                
-                <p>
-                    Commuters frequently experience delays due to unexpected traffic incidents, leading to frustration and lost time. While current traffic management systems provide real-time updates, they often lack predictive capabilities that could help prevent or mitigate delays.
-                </p>
-                
-                <p>
-                    <strong>Challenge:</strong><br>
-                    Develop an AI-driven platform that analyzes real-time traffic data, weather conditions, and historical incident patterns to predict potential traffic disruptions. The system should provide early warnings to users and suggest alternative routes, helping commuters avoid delays and reducing overall traffic congestion.
-                </p>
-                
-            </div>
-            <div class="problem-card">
-                <h3>Problem Statement 5</h3>
-                <p>
-                    <strong>Problem Statement: FinSimplify</strong>
-                </p>
-                
-                <p>
-                    Small and medium-sized enterprises (SMEs) often struggle to interpret complex financial reports, which are crucial for making informed business decisions. This complexity can lead to poor financial management, missed opportunities, and financial instability.
-                </p>
-                
-                <p>
-                    <strong>Challenge:</strong><br>
-                    Design a data science platform that leverages natural language processing (NLP) to automatically summarize financial reports for SMEs. The platform should provide clear, concise summaries and actionable recommendations, enabling business owners to make informed decisions without requiring extensive financial expertise.
-                </p>
-                
-            </div>
-
-            <div class="problem-card">
-                <h3>Problem Statement 6</h3>
-                <p>
-                    <strong>Problem Statement: Aushadham</strong>
-                </p>
-                
-                <p>
-                    Patients often struggle to understand and act upon the results of their medical reports due to complex medical terminology and lack of clear guidance. Simultaneously, doctors face challenges managing and reviewing large volumes of patient reports amidst their busy schedules.
-                </p>
-                
-                <p>
-                    <strong>Challenge:</strong><br>
-                    Develop a platform that can analyze uploaded medical reports and provide easy-to-understand summaries and actionable insights for patients. The platform should also assist doctors by highlighting potential diagnoses or root causes, streamlining their review process, and allowing them to focus on critical cases more efficiently.
-                </p>
-            </div>
-
-            <div class="problem-card">
-                <h3>Problem Statement 7</h3>
-                <p>
-                    <strong>Problem Statement: DesignPhase</strong>
-                </p>
-                
-                <p>
-                    Construction projects frequently experience delays due to poor communication, inadequate scheduling, improper planning, and a lack of transparency among stakeholders. These issues are interconnected and tend to escalate with larger projects, leading to significant time and cost overruns.
-                </p>
-                
-                <p>
-                    <strong>Challenge:</strong><br>
-                    Develop a software solution that improves coordination and communication across stakeholders in the construction industry. The platform should facilitate better planning, scheduling, and transparency, enabling real-time updates and effective communication to minimize delays and control costs. The solution must be scalable to accommodate projects of various sizes, with features that address the unique challenges of larger projects.
-                </p>
-                
-            </div>
-            
-    <section class="contact" id="contact">
-        <h1 class="heading"> <span>contact</span> us </h1>
-        <div class="row">
-            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7598.387233002033!2d83.3732238959962!3d17.78259533121811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a395be0d5b27a9f%3A0x34052378ff85c47e!2sVenture%20Development%20Centre!5e0!3m2!1sen!2sin!4v1722695930865!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            <form id="contactForm">
-                <h3>get in touch</h3>
-                <div class="inputBox">
-                    <span class="fas fa-user"></span>
-                    <input type="text" placeholder="name" required>
+        <!--About Us Section-->
+        <section class="about" id="about">
+            <h1 class="heading"> <span>about</span> us </h1>
+            <div class="row">
+                <div class="image">
+                    <img src="./img/about.jpg" alt="About Us">
                 </div>
-                <div class="inputBox">
-                    <span class="fas fa-envelope"></span>
-                    <input type="email" placeholder="email" required>
+                <div class="content">
+                    <h3>What We Stand For?</h3>
+                    <p>At Technova, hosted by the Gitam Aero Astro Club, we are dedicated to fostering innovation and creativity in technology. Our mission is to unite aspiring developers, designers, and tech enthusiasts to collaborate, learn, and push the boundaries of possibility. As a community focused on promoting technology and its applications, particularly in aerospace, we provide a platform for participants to showcase their skills, connect with peers, and gain insights from industry experts. Our 24-hour hackathons challenge participants to creatively solve real-world problems while encouraging teamwork and skill development, making our events accessible to everyone—from seasoned coders to passionate beginners.</p>
+                    <div class="button-container">
+                        <a href="#knowmore" class="btn">Know more</a>
+                    </div>
                 </div>
-                <div class="inputBox">
-                    <span class="fas fa-phone"></span>
-                    <input type="number" placeholder="number" required>
+            </div>
+        </section>
+
+        <section class="registration" id="registration">
+            <h1 class="heading"> <span>Countdown</span> to TechNova </h1>
+            <div class="countdown">
+                <div>
+                    <span id="days">00</span> Days
                 </div>
-                <input type="button" value="Contact Now" class="btn" id="contactBtn" onclick="sendMail()">
-            </form>
->>>>>>> 6047e2ce4d669a609ec499bc799862ab04ddfbfe
-        </div>
-    </section>
-
-
-<!--<section class="contact" id="contact">
-    <h1 class="heading"> <span>contact</span> us </h1>
-    <div class="row">
-        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.2252276521954!2d83.37412667517401!3d17.78110888317482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a395b1d26257b45%3A0xce6cb3368857f14e!2sSir%20Arthur%20Cotton%20Bhavan!5e0!3m2!1sen!2sin!4v1724767578497!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <form id="contactForm">
-            <h3>get in touch</h3>
-            <div class="inputBox">
-                <span class="fas fa-user"></span>
-                <input type="text" placeholder="name" required>
+                <div>
+                    <span id="hours">00</span> Hours
+                </div>
+                <div>
+                    <span id="minutes">00</span> Minutes
+                </div>
+                <div>
+                    <span id="seconds">00</span> Seconds
+                </div>
             </div>
-            <div class="inputBox">
-                <span class="fas fa-envelope"></span>
-                <input type="email" placeholder="email" required>
+            <a href="https://forms.gle/eTgf5gWPHAxU6FBfA" class="register-link" target="_blank">Register Now</a>
+        </section>
+
+        <section class="knowmore" id="knowmore">
+            <h1 class="heading"> <span>Know</span> More </h1>
+            <div class="content">
+                <div class="info-box">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Event Date</h3>
+                    <p>August 29-30, 2024</p>
+                </div>
+                <div class="info-box">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Location</h3>
+                    <p>Cotton Bhavan, Gitam University, Visakhapatnam</p>
+                </div>
+                <div class="info-box">
+                    <i class="fas fa-trophy"></i>
+                    <h3>Prizes</h3>
+                    <p>Internship at renowned Startups & Goodies!</p>
+                </div>
+                <div class="info-box">
+                    <i class="fas fa-network-wired"></i>
+                    <h3>Networking</h3>
+                    <p>Connect with industry experts and fellow tech enthusiasts</p>
+                </div>
+                <div class="info-box">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Workshops</h3>
+                    <p>Attend insightful workshops and tech talks</p>
+                </div>
+                <div class="info-box duration">
+                    <i class="fas fa-clock"></i>
+                    <h3>Hackathon Duration</h3>
+                    <p>24 hours</p>
+                </div>
             </div>
-            <div class="inputBox">
-                <span class="fas fa-phone"></span>
-                <input type="number" placeholder="number" required>
+        </section>
+
+        <section class="problem-statements-list" id="problem-statements">
+            <h1 class="heading"> <span>Problem</span> Statements </h1>
+            <div class="container">
+                <div class="problem-card">
+                    <h3>Problem Statement 1</h3>
+                    <p>
+                        <strong>Problem Statement: Virtual Herbal Garden</strong>
+                    </p>
+                    
+                    <p>
+                        <strong>Background:</strong><br>
+                        The AYUSH sector relies on medicinal plants and herbs, essential to traditional healing practices. However, access to physical herbal gardens is limited. A Virtual Herbal Garden will bridge this gap by offering a digital platform where users can explore and learn about various medicinal plants from the comfort of their homes.
+                    </p>
+                    
+                    <p>
+                        <strong>Description:</strong><br>
+                        Participants are tasked with developing a Virtual Herbal Garden that is engaging, informative, and user-friendly. The platform should include:
+                    </p>
+                    
+                    <ul>
+                        <li><strong>Interactive 3D Models:</strong> Realistic 3D models of medicinal plants, allowing users to rotate, zoom, and explore from different angles.</li>
+                        <li><strong>Detailed Information:</strong> Comprehensive details for each plant, including botanical name, common names, habitat, medicinal uses, and cultivation methods.</li>
+                        <li><strong>Multimedia Integration:</strong> High-quality images, videos, and audio descriptions to enhance the learning experience.</li>
+                        <li><strong>Search and Filter Options:</strong> Advanced search functionality to easily locate specific plants and filter them based on criteria like medicinal uses, region, and type.</li>
+                        <li><strong>Virtual Tours:</strong> Guided virtual tours focusing on specific themes, such as plants for digestive health, immunity, and skincare.</li>
+                        <li><strong>User Interaction:</strong> Features allowing users to bookmark favorite plants, take notes, and share information on social media.</li>
+                    </ul>
+                    
+                    <p>
+                        <strong>Expected Outcome:</strong><br>
+                        A comprehensive Virtual Herbal Garden that serves as a valuable educational tool for students, practitioners, and enthusiasts of the AYUSH sector. The platform should be visually appealing, informative, and interactive, making the knowledge of medicinal plants accessible to a wider audience and promoting awareness of traditional herbal practices.
+                    </p>
+                </div>
+                <div class="problem-card">
+                    <h3>Problem Statement 2</h3>
+                    <p>
+                        <strong>Problem Statement: Alumni Association Platform</strong>
+                    </p>
+                    
+                    <p>
+                        <strong>Background:</strong><br>
+                        Alumni associations play a crucial role in maintaining lifelong connections between graduates and their alma mater. However, many face challenges in engagement, donations, and providing services like job networking. The aim is to create a comprehensive Alumni Association platform that addresses these challenges through both web and mobile applications.
+                    </p>
+                    
+                    <p>
+                        <strong>Description:</strong><br>
+                        Participants are tasked with developing an Alumni Association platform for a University/Institute, accessible through web and mobile apps. The platform should include:
+                    </p>
+                    
+                    <ul>
+                        <li><strong>Alumni Registration:</strong> Simple registration processes allowing alumni to join, update profiles, and stay connected.</li>
+                        <li><strong>Donation Portal:</strong> Secure mechanisms for easy donations to support college initiatives.</li>
+                        <li><strong>Networking Hub:</strong> Sections to connect alumni based on interests, professions, and locations.</li>
+                        <li><strong>Job Portal:</strong> Integrated job search and posting features for career opportunities and connections.</li>
+                        <li><strong>Alumni Directory:</strong> Searchable directory based on graduation year, field of study, industry, etc.</li>
+                        <li><strong>Success Story Tracking:</strong> Features to showcase and track alumni achievements and contributions.</li>
+                        <li><strong>Events and Reunions:</strong> Tools for organizing and managing alumni events and workshops.</li>
+                        <li><strong>Feedback and Surveys:</strong> Channels for alumni feedback and participation in surveys.</li>
+                    </ul>
+                    
+                    <p>
+                        <strong>Expected Solution:</strong><br>
+                        The platform is expected to enhance alumni engagement, increase philanthropic support, support career advancement, foster knowledge sharing, and build a strong community. It should be user-friendly, secure, and scalable, catering to the diverse needs of the alumni community.
+                    </p>
+                    
+                </div>
+                <div class="problem-card">
+                    <h3>Problem Statement 3</h3>
+                    <p>
+                        <strong>Problem Statement: NutriPlan</strong>
+                    </p>
+                    
+                    <p>
+                        With an overwhelming amount of conflicting nutritional advice available, individuals often find it challenging to maintain a balanced diet that aligns with their personal health goals. This confusion can lead to inconsistent dietary habits and unmet health objectives.
+                    </p>
+                    
+                    <p>
+                        <strong>Challenge:</strong><br>
+                        Create a web application that analyzes users’ dietary habits, health goals, and preferences to generate personalized meal plans. The platform should offer clear and actionable nutritional advice, suggest recipes, and adapt recommendations based on user feedback and progress. This solution aims to simplify the path to healthier eating.
+                    </p>
+                    
+                </div>
+                <div class="problem-card">
+                    <h3>Problem Statement 4</h3>
+                    <p>
+                        <strong>Problem Statement: TrafficFlow</strong>
+                    </p>
+                    
+                    <p>
+                        Commuters frequently experience delays due to unexpected traffic incidents, leading to frustration and lost time. While current traffic management systems provide real-time updates, they often lack predictive capabilities that could help prevent or mitigate delays.
+                    </p>
+                    
+                    <p>
+                        <strong>Challenge:</strong><br>
+                        Develop an AI-driven platform that analyzes real-time traffic data, weather conditions, and historical incident patterns to predict potential traffic disruptions. The system should provide early warnings to users and suggest alternative routes, helping commuters avoid delays and reducing overall traffic congestion.
+                    </p>
+                    
+                </div>
+                <div class="problem-card">
+                    <h3>Problem Statement 5</h3>
+                    <p>
+                        <strong>Problem Statement: FinSimplify</strong>
+                    </p>
+                    
+                    <p>
+                        Small and medium-sized enterprises (SMEs) often struggle to interpret complex financial reports, which are crucial for making informed business decisions. This complexity can lead to poor financial management, missed opportunities, and financial instability.
+                    </p>
+                    
+                    <p>
+                        <strong>Challenge:</strong><br>
+                        Design a data science platform that leverages natural language processing (NLP) to automatically summarize financial reports for SMEs. The platform should provide clear, concise summaries and actionable recommendations, enabling business owners to make informed decisions without requiring extensive financial expertise.
+                    </p>
+                    
+                </div>
+
+                <div class="problem-card">
+                    <h3>Problem Statement 6</h3>
+                    <p>
+                        <strong>Problem Statement: Aushadham</strong>
+                    </p>
+                    
+                    <p>
+                        Patients often struggle to understand and act upon the results of their medical reports due to complex medical terminology and lack of clear guidance. Simultaneously, doctors face challenges managing and reviewing large volumes of patient reports amidst their busy schedules.
+                    </p>
+                    
+                    <p>
+                        <strong>Challenge:</strong><br>
+                        Develop a platform that can analyze uploaded medical reports and provide easy-to-understand summaries and actionable insights for patients. The platform should also assist doctors by highlighting potential diagnoses or root causes, streamlining their review process, and allowing them to focus on critical cases more efficiently.
+                    </p>
+                </div>
+
+                <div class="problem-card">
+                    <h3>Problem Statement 7</h3>
+                    <p>
+                        <strong>Problem Statement: DesignPhase</strong>
+                    </p>
+                    
+                    <p>
+                        Construction projects frequently experience delays due to poor communication, inadequate scheduling, improper planning, and a lack of transparency among stakeholders. These issues are interconnected and tend to escalate with larger projects, leading to significant time and cost overruns.
+                    </p>
+                    
+                    <p>
+                        <strong>Challenge:</strong><br>
+                        Develop a software solution that improves coordination and communication across stakeholders in the construction industry. The platform should facilitate better planning, scheduling, and transparency, enabling real-time updates and effective communication to minimize delays and control costs. The solution must be scalable to accommodate projects of various sizes, with features that address the unique challenges of larger projects.
+                    </p>
+                </div>   
             </div>
-            <input type="button" value="Contact Now" class="btn" id="contactBtn" onclick="sendMail()">
-        </form>
-    </div>
-</section>-->
-
-<section class="footer">
-    <div class="share">
-        <a href="https://www.instagram.com/gitam.aeroastro/?igsh=MWJscGNnbmlyaDdzMQ%3D%3D" class="fab fa-instagram" target="_blank"></a>
-        <a href="https://in.linkedin.com/company/gitam-aero-astro-club" class="fab fa-linkedin" target="_blank"></a>
-        <a href="mailto:aeroastro_vzg@gitam.in" class="fas fa-envelope"></a>
-    </div>
-    <div class="links">
-        <a href="#home">home</a>
-        <a href="#about">about</a>
-        <a href="#registration">registration</a>
-        <a href="#knowmore">know more</a>
-        <a href="#contact">contact</a>
-    </div>
-</section>
-
-<script>
-    function sendMail() {
-        var name = document.querySelector('#contactForm input[type="text"]').value;
-        var email = document.querySelector('#contactForm input[type="email"]').value;
-        var number = document.querySelector('#contactForm input[type="number"]').value;
-        var mailtoLink = "mailto:aeroastro_vzg@gitam.in?subject=Contact%20Request&body=Name: " + name + "%0AEmail: " + email + "%0APhone: " + number;
-        window.location.href = mailtoLink;
-    }
+        </section>
+        
+        <section class="contact" id="contact">
+            <h1 class="heading"> <span>contact</span> us </h1>
+            <div class="row">
+                <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7598.387233002033!2d83.3732238959962!3d17.78259533121811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a395be0d5b27a9f%3A0x34052378ff85c47e!2sVenture%20Development%20Centre!5e0!3m2!1sen!2sin!4v1722695930865!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <form id="contactForm">
+                    <h3>get in touch</h3>
+                    <div class="inputBox">
+                        <span class="fas fa-user"></span>
+                        <input type="text" placeholder="name" required>
+                    </div>
+                    <div class="inputBox">
+                        <span class="fas fa-envelope"></span>
+                        <input type="email" placeholder="email" required>
+                    </div>
+                    <div class="inputBox">
+                        <span class="fas fa-phone"></span>
+                        <input type="number" placeholder="number" required>
+                    </div>
+                    <input type="button" value="Contact Now" class="btn" id="contactBtn" onclick="sendMail()">
+                </form>
+            </div>
+        </section>
 
 
-    const eventDate = new Date("August 29, 2024 14:30:00").getTime();
+        <section class="footer">
+            <div class="share">
+                <a href="https://www.instagram.com/gitam.aeroastro/?igsh=MWJscGNnbmlyaDdzMQ%3D%3D" class="fab fa-instagram" target="_blank"></a>
+                <a href="https://in.linkedin.com/company/gitam-aero-astro-club" class="fab fa-linkedin" target="_blank"></a>
+                <a href="mailto:aeroastro_vzg@gitam.in" class="fas fa-envelope"></a>
+            </div>
+            <div class="links">
+                <a href="#home">home</a>
+                <a href="#about">about</a>
+                <a href="#registration">registration</a>
+                <a href="#knowmore">know more</a>
+                <a href="#contact">contact</a>
+            </div>
+        </section>
 
-    const countdownFunction = setInterval(function() {
-        const now = new Date().getTime();
-        const timeLeft = eventDate - now;
+        <script>
+            function sendMail() {
+                var name = document.querySelector('#contactForm input[type="text"]').value;
+                var email = document.querySelector('#contactForm input[type="email"]').value;
+                var number = document.querySelector('#contactForm input[type="number"]').value;
+                var mailtoLink = "mailto:aeroastro_vzg@gitam.in?subject=Contact%20Request&body=Name: " + name + "%0AEmail: " + email + "%0APhone: " + number;
+                window.location.href = mailtoLink;
+            }
 
-        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-        document.getElementById("days").innerHTML = days;
-        document.getElementById("hours").innerHTML = hours;
-        document.getElementById("minutes").innerHTML = minutes;
-        document.getElementById("seconds").innerHTML = seconds;
+            const eventDate = new Date("August 29, 2024 14:30:00").getTime();
 
-        if (timeLeft < 0) {
-            clearInterval(countdownFunction);
-            document.querySelector(".countdown").innerHTML = "The event has started!";
-        }
-    }, 1000);
+            const countdownFunction = setInterval(function() {
+                const now = new Date().getTime();
+                const timeLeft = eventDate - now;
 
-</script>
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-</body>
+                document.getElementById("days").innerHTML = days;
+                document.getElementById("hours").innerHTML = hours;
+                document.getElementById("minutes").innerHTML = minutes;
+                document.getElementById("seconds").innerHTML = seconds;
+
+                if (timeLeft < 0) {
+                    clearInterval(countdownFunction);
+                    document.querySelector(".countdown").innerHTML = "The event has started!";
+                }
+            }, 1000);
+
+        </script>
+
+    </body>
 
 </html>

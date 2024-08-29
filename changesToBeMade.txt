@@ -1,0 +1,20 @@
+@programmers 
+There are a few problems in the hackathon website
+
+1) This kind of navbar is making it look like there is too much information and the user might feel little lazy to go through the whole website and might compromise on his attention span.
+2) `The navBar is not responsive as well!`
+3) `What we stand for` can be centered.
+4) CountDown was set till 29th 00:00:00
+5) When you hover upin the `info-box` the illustrations are not being visible.
+6) Adding images and graphics to the problem statements might make it look better and welcoming.
+7) Made the contact us input areas with smooth borders adding border radius
+8) There is a small error in the Google map
+9) Making footer float over the background rather than than inserting in the background
+10) Making the GAAC Logo bigger and more clear.
+
+Let me know if there any other changes to make apart from these
+@ibrahim1807 
+You can go ahead and merge the PR, if you would want accept the the changes that I made so far here.
+- Feel free to let me know if you want to modify anything further.
+
+
